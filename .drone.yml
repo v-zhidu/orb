@@ -1,7 +1,11 @@
+workspace:
+  base: /go
+  path: src/github.com/v-zhidu/orb
+
 pipeline:
   build:
     image: golang
     commands:
-      - go get
+      - go get ./...
       - go build
       - go test
