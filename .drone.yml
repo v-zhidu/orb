@@ -1,11 +1,11 @@
 workspace:
-  base: /go
-  path: src/github.com/v-zhidu/orb
+  base: /data/apps
+  path: invested
 
 pipeline:
   build:
-    image: golang
+    image: java:openjdk-7
+    environment:
+      - GRADLE_USER_HOME=~/.gradle
     commands:
-      - go get ./...
-      - go build
-      - go test
+      - gradle build
